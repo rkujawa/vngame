@@ -191,11 +191,11 @@ screen main_menu:
 
         has vbox
 
-        textbutton _("Start Game") action Start()
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit(confirm=False)
+        textbutton _("Rozpocznij nową grę") action Start()
+        textbutton _("Załaduj grę") action ShowMenu("load")
+        textbutton _("Ustawienia") action ShowMenu("preferences")
+        textbutton _("Pomoc") action Help()
+        textbutton _("Wyjdź") action Quit(confirm=False)
 
 init -2:
 
@@ -225,13 +225,13 @@ screen navigation:
 
         has vbox
 
-        textbutton _("Return") action Return()
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Save Game") action ShowMenu("save")
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Main Menu") action MainMenu()
-        textbutton _("Help") action Help()
-        textbutton _("Quit") action Quit()
+        textbutton _("Powrót") action Return()
+        textbutton _("Ustawienia") action ShowMenu("preferences")
+        textbutton _("Zapisz grę") action ShowMenu("save")
+        textbutton _("Załaduj grę") action ShowMenu("load")
+        textbutton _("Główne menu") action MainMenu()
+        textbutton _("Pomoc") action Help()
+        textbutton _("Wyjdź") action Quit()
 
 init -2:
 
@@ -358,23 +358,23 @@ screen preferences:
                 style_group "pref"
                 has vbox
 
-                label _("Display")
-                textbutton _("Window") action Preference("display", "window")
-                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                label _("Ekran")
+                textbutton _("Okno") action Preference("display", "window")
+                textbutton _("Pełny ekran") action Preference("display", "fullscreen")
 
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
+                label _("Przejścia")
+                textbutton _("Wszystkie") action Preference("transitions", "all")
+                textbutton _("Żadne") action Preference("transitions", "none")
 
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Text Speed")
+                label _("Prędkość tekstu")
                 bar value Preference("text speed")
 
             frame:
@@ -389,23 +389,23 @@ screen preferences:
                 style_group "pref"
                 has vbox
 
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
+                label _("Pomijanie")
+                textbutton _("Widzianych") action Preference("skip", "seen")
+                textbutton _("Wszystkich") action Preference("skip", "all")
 
             frame:
                 style_group "pref"
                 has vbox
 
-                textbutton _("Begin Skipping") action Skip()
+                textbutton _("Rozpocznij pomijanie") action Skip()
 
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("After Choices")
-                textbutton _("Stop Skipping") action Preference("after choices", "stop")
-                textbutton _("Keep Skipping") action Preference("after choices", "skip")
+                label _("Po wyborze")
+                textbutton _("Zatrzymaj pomijanie") action Preference("after choices", "stop")
+                textbutton _("Pomijaj dalej") action Preference("after choices", "skip")
 
             frame:
                 style_group "pref"
@@ -422,14 +422,14 @@ screen preferences:
                 style_group "pref"
                 has vbox
 
-                label _("Music Volume")
+                label _("Głośność muzyki")
                 bar value Preference("music volume")
 
             frame:
                 style_group "pref"
                 has vbox
 
-                label _("Sound Volume")
+                label _("Głośność dźwięku")
                 bar value Preference("sound volume")
 
                 if config.sample_sound:
@@ -500,26 +500,26 @@ screen yesno_prompt:
             spacing 30
 
         label _(message):
-            xalign 0.5
+            xalign 0.5 
 
         hbox:
             xalign 0.5
             spacing 100
 
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
+            textbutton _("Tak") action yes_action
+            textbutton _("Nie") action no_action
 
     # Right-click and escape answer "no".
     key "game_menu" action no_action
 
 init -2:
+
     style yesno_button:
         size_group "yesno"
 
     style yesno_label_text:
         text_align 0.5
         layout "subtitle"
-
 
 ##############################################################################
 # Quick Menu
@@ -535,14 +535,14 @@ screen quick_menu:
         xalign 1.0
         yalign 1.0
 
-        textbutton _("Back") action Rollback()
-        textbutton _("Save") action ShowMenu('save')
-        textbutton _("Q.Save") action QuickSave()
-        textbutton _("Q.Load") action QuickLoad()
-        textbutton _("Skip") action Skip()
-        textbutton _("F.Skip") action Skip(fast=True, confirm=True)
+        textbutton _("Wstecz") action Rollback()
+        textbutton _("Zapis") action ShowMenu('save')
+        textbutton _("S.Zapis") action QuickSave()
+        textbutton _("S.Ładownie") action QuickLoad()
+        textbutton _("Pomiń") action Skip()
+        textbutton _("S.Pomiń") action Skip(fast=True, confirm=True)
         textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Prefs") action ShowMenu('preferences')
+        textbutton _("Ustawienia") action ShowMenu('preferences')
 
 init -2:
     style quick_button:
