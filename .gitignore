@@ -1,0 +1,8 @@
+vngame*dists/*
+vngame/log.txt
+vngame/tmp/*
+vngame/project.json
+vngame/game/saves/*
+*rpyb
+*rpyc
+
