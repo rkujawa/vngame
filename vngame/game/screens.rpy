@@ -9,7 +9,7 @@
 screen say:
 
     # Defaults for side_image and two_window
-    default side_image = None
+#    default side_image = None
     default two_window = False
 
     # Decide if we want to use the one-window or two-window variant.
@@ -49,13 +49,13 @@ screen say:
                 text what id "what"
 
     # If there's a side image, display it above the text.
-    if side_image:
-        add side_image
-    else:
-        add SideImage() xalign 0.0 yalign 1.0
+#    if side_image:
+#        add side_image
+#    else:
+#       add SideImage() xalign 0.0 yalign 1.0
 
     # Use the quick menu.
-    use quick_menu
+#    use quick_menu
 
 
 ##############################################################################
